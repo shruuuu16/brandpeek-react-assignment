@@ -1,21 +1,127 @@
-### Project Structure
+# BrandPeek 📱
 
-[cite_start]The folder structure is organized for scalability and separation of concerns:
+BrandPeek is a small, polished React Native app built with Expo as part of an internship assignment. It simulates a "Brand Discovery" experience, fetching data from a mock backend and displaying it in a clean, visually appealing UI.
 
-* `/assets`: Static assets like icon and splash screen.
-* `/components`: Reusable UI components (e.g., `BrandListItem`, `LoadingSpinner`, `RadialGradient`).
-* `/navigation`: Navigation stack configuration (`AppNavigator.js`).
-* `/screens`: Top-level screen components (`HomeScreen.js`, `BrandDetailScreen.js`).
-* `/services`: API logic, hooks, or any external data handling (`api.js`).
-* `App.js`: The root entry point of the application.
+## ✨ Features
 
-### API Choice: MockAPI
+* **Home Screen:** Displays a list of 10 brands fetched from a live API, rendered in a "frosted glass" (glassmorphism) UI.
+* **Custom Gradients:**
+    * **Home:** A precise recreation of the assignment's dark, "bluish" radial gradient using `react-native-svg`.
+    * **Detail:** A subtle, dark purple-to-black linear gradient.
+* **Navigation:** Tap on a brand to navigate to its dedicated detail screen.
+* **API Integration:** Connects to a mock backend (MockAPI) to fetch a list of brands and individual brand details by ID.
+* **Polished UI:** Focus on clean spacing, modern UI, and user-friendly interactions (e.g., clickable links, pressable effects).
+* **Error & Loading States:** Includes loading spinners while fetching data and user-friendly error screens if the API fails.
 
-[cite_start]I chose **MockAPI** (mockapi.io) for this project because[cite: 32]:
-1.  **Speed:** It allows for creating a realistic REST API endpoint in under 60 seconds without any backend coding.
-2.  [cite_start]**Simplicity:** It's free and perfect for a frontend assignment, providing endpoints for both fetching a list (`/brands`) [cite: 27] [cite_start]and fetching by ID (`/brands/:id`)[cite: 28].
+## 🚀 Live Demo (ExpoGo)
 
-### Gradient Implementation
+Scan the QR code below with the **Expo Go** app on your phone (Android or iOS) to run the app instantly.
 
-* [cite_start]**Home Screen (Radial Gradient):** The assignment requires an *exact* match of the provided radial gradient[cite: 13, 23]. [cite_start]Since `expo-linear-gradient` does not support radial gradients, I used `react-native-svg`[cite: 23]. The `components/RadialGradient.js` file creates an SVG `<Rect>` that fills the screen, which is itself filled by a `<RadialGradient>` definition matching the preview image (dark purple/blue at the top, fading to black).
-* [cite_start]**Brand Detail Screen (Subtle Gradient):** For this screen, a "subtle gradient" was required[cite: 21]. `expo-linear-gradient` is the simplest and most performant tool for this, so it was used.
+**[[YOUR_EXPO_GO_LINK_HERE](https://expo.dev/accounts/shruuuu16/projects/BrandPeek)]**
+
+## 🛠️ Tech Stack
+
+* **React Native**
+* **Expo** (SDK 50)
+* **React Navigation** (Native Stack)
+* **MockAPI** (for the REST backend)
+* **Axios** (for API requests)
+* **`react-native-svg`** (for the custom radial gradients)
+* **`expo-blur`** (for the "frosted glass" UI)
+* **`expo-linear-gradient`**
+* **`@expo/vector-icons`**
+
+## 📂 Project Structure
+
+The folder structure is organized for scalability and separation of concerns:
+BrandPeek/ ├── /assets/ # Static assets (fonts, icons) ├── /components/ # Reusable UI components (BrandListItem, RadialGradient, etc.) ├── /navigation/ # Navigation stack configuration (AppNavigator.js) ├── /screens/ # Top-level screen components (HomeScreen.js, BrandDetailScreen.js) ├── /services/ # API logic (api.js) └── App.js # Root entry point
+Here is a complete, polished `README.md` file you can use for your GitHub repository. It includes all the sections required by the assignment and is formatted professionally.
+
+Just copy, paste, and **replace the placeholder** with your live ExpoGo link.
+
+-----
+
+```markdown
+# BrandPeek 📱
+
+BrandPeek is a small, polished React Native app built with Expo as part of an internship assignment. It simulates a "Brand Discovery" experience, fetching data from a mock backend and displaying it in a clean, visually appealing UI.
+
+## ✨ Features
+
+* **Home Screen:** Displays a list of 10 brands fetched from a live API, rendered in a "frosted glass" (glassmorphism) UI.
+* **Custom Gradients:**
+    * **Home:** A precise recreation of the assignment's dark, "bluish" radial gradient using `react-native-svg`.
+    * **Detail:** A subtle, dark purple-to-black linear gradient.
+* **Navigation:** Tap on a brand to navigate to its dedicated detail screen.
+* **API Integration:** Connects to a mock backend (MockAPI) to fetch a list of brands and individual brand details by ID.
+* **Polished UI:** Focus on clean spacing, modern UI, and user-friendly interactions (e.g., clickable links, pressable effects).
+* **Error & Loading States:** Includes loading spinners while fetching data and user-friendly error screens if the API fails.
+
+## 🚀 Live Demo (ExpoGo)
+
+Scan the QR code below with the **Expo Go** app on your phone (Android or iOS) to run the app instantly.
+
+**[YOUR_EXPO_GO_LINK_HERE]**
+*(e.g., `https://expo.dev/@shruuuu16/BrandPeek`)*
+
+## 🛠️ Tech Stack
+
+* **React Native**
+* **Expo** (SDK 50)
+* **React Navigation** (Native Stack)
+* **MockAPI** (for the REST backend)
+* **Axios** (for API requests)
+* **`react-native-svg`** (for the custom radial gradients)
+* **`expo-blur`** (for the "frosted glass" UI)
+* **`expo-linear-gradient`**
+* **`@expo/vector-icons`**
+
+## 📂 Project Structure
+
+The folder structure is organized for scalability and separation of concerns:
+
+```
+
+BrandPeek/
+├── /assets/          \# Static assets (fonts, icons)
+├── /components/      \# Reusable UI components (BrandListItem, RadialGradient, etc.)
+├── /navigation/      \# Navigation stack configuration (AppNavigator.js)
+├── /screens/         \# Top-level screen components (HomeScreen.js, BrandDetailScreen.js)
+├── /services/        \# API logic (api.js)
+└── App.js            \# Root entry point
+
+````
+
+This structure is clean, modular, and easy to maintain. Components are decoupled from screens, and all API logic is centralized in the `services` folder.
+
+## 🔗 API Choice (MockAPI)
+
+I chose **MockAPI** (mockapi.io) for this project for two main reasons:
+
+1.  **Speed:** It allowed me to build a realistic, schema-based REST API endpoint in under 60 seconds without any backend coding.
+2.  **Simplicity:** It's free and perfect for a frontend assignment, providing endpoints for both fetching a list (`/brands`) and fetching by ID (`/brands/:id`) right out of the box.
+
+## ⚙️ How to Run Locally
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
+    cd your-repo-name
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+    *or*
+    ```bash
+    npx expo install
+    ```
+
+3.  **Run the app:**
+    ```bash
+    npx expo start
+    ```
+    * Press `w` to open in your web browser.
+    * Scan the QR code with the Expo Go app on your phone.
+````

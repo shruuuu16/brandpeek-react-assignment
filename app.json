@@ -22,8 +22,17 @@
       },
       "package": "com.yourusername.brandpeek"
     },
-    "web": {
-      
+    "web": {},
+    "extra": {
+      "eas": {
+        "projectId": "5b056bf7-d72d-4571-94ae-f14617545d37"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/5b056bf7-d72d-4571-94ae-f14617545d37"
     }
   }
 }
